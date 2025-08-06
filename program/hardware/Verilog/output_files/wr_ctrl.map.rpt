@@ -1,0 +1,713 @@
+Analysis & Synthesis report for wr_ctrl
+Tue Jan 07 09:20:47 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |wr_ctrl|ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|state_c
+ 11. State Machine - |wr_ctrl|ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|ADC_driver:U_ADC_driver|state_c
+ 12. State Machine - |wr_ctrl|DAC_pulse:U_DAC_pulse|state_c
+ 13. State Machine - |wr_ctrl|DAC_pulse:U_DAC_bias|state_c
+ 14. Registers Removed During Synthesis
+ 15. Removed Registers Triggering Further Register Optimizations
+ 16. General Register Statistics
+ 17. Inverted Register Statistics
+ 18. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 19. Source assignments for Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated|a_dpfifo_i631:dpfifo|altsyncram_3e81:FIFOram
+ 20. Parameter Settings for User Entity Instance: DAC_pulse:U_DAC_bias
+ 21. Parameter Settings for User Entity Instance: Sig_dly:U_Sig_dly
+ 22. Parameter Settings for User Entity Instance: DAC_pulse:U_DAC_pulse
+ 23. Parameter Settings for User Entity Instance: ADC_loop:U_ADC_loop|ADC_set:U_ADC_set
+ 24. Parameter Settings for User Entity Instance: ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|ADC_driver:U_ADC_driver
+ 25. Parameter Settings for User Entity Instance: Fifo:U_Fifo|scfifo:scfifo_component
+ 26. scfifo Parameter Settings by Entity Instance
+ 27. Port Connectivity Checks: "ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|ADC_driver:U_ADC_driver"
+ 28. Port Connectivity Checks: "Sig_dly:U_Sig_dly"
+ 29. Port Connectivity Checks: "DAC_pulse:U_DAC_bias"
+ 30. Port Connectivity Checks: "UART_recv:U_UART_recv"
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                          ;
++------------------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Jan 07 09:20:47 2025            ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; wr_ctrl                                          ;
+; Top-level Entity Name              ; wr_ctrl                                          ;
+; Family                             ; Cyclone IV E                                     ;
+; Total logic elements               ; 953                                              ;
+;     Total combinational functions  ; 800                                              ;
+;     Dedicated logic registers      ; 509                                              ;
+; Total registers                    ; 509                                              ;
+; Total pins                         ; 29                                               ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 256                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Total PLLs                         ; 0                                                ;
++------------------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE30F23C8       ;                    ;
+; Top-level entity name                                                      ; wr_ctrl            ; wr_ctrl            ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 7           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-7         ; < 0.1%      ;
+;     Processor 8            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; Sig_dly.v                        ; yes             ; User Verilog HDL File        ; G:/verilog/work/20240925_wr_ctrl/Sig_dly.v                                 ;         ;
+; DAC_pulse.v                      ; yes             ; User Verilog HDL File        ; G:/verilog/work/20240925_wr_ctrl/DAC_pulse.v                               ;         ;
+; ADC_loop.v                       ; yes             ; User Verilog HDL File        ; G:/verilog/work/20240925_wr_ctrl/ADC_loop.v                                ;         ;
+; wr_ctrl.v                        ; yes             ; User Verilog HDL File        ; G:/verilog/work/20240925_wr_ctrl/wr_ctrl.v                                 ;         ;
+; Uart_tx.v                        ; yes             ; User Verilog HDL File        ; G:/verilog/work/20240925_wr_ctrl/Uart_tx.v                                 ;         ;
+; UART_send.v                      ; yes             ; User Verilog HDL File        ; G:/verilog/work/20240925_wr_ctrl/UART_send.v                               ;         ;
+; Uart_rx.v                        ; yes             ; User Verilog HDL File        ; G:/verilog/work/20240925_wr_ctrl/Uart_rx.v                                 ;         ;
+; UART_recv.v                      ; yes             ; User Verilog HDL File        ; G:/verilog/work/20240925_wr_ctrl/UART_recv.v                               ;         ;
+; UART_param.v                     ; yes             ; User Verilog HDL File        ; G:/verilog/work/20240925_wr_ctrl/UART_param.v                              ;         ;
+; DAC_driver.v                     ; yes             ; User Verilog HDL File        ; G:/verilog/work/20240925_wr_ctrl/DAC_driver.v                              ;         ;
+; ADC_set.v                        ; yes             ; User Verilog HDL File        ; G:/verilog/work/20240925_wr_ctrl/ADC_set.v                                 ;         ;
+; ADC_driver.v                     ; yes             ; User Verilog HDL File        ; G:/verilog/work/20240925_wr_ctrl/ADC_driver.v                              ;         ;
+; ip_core/Fifo.v                   ; yes             ; User Wizard-Generated File   ; G:/verilog/work/20240925_wr_ctrl/ip_core/Fifo.v                            ;         ;
+; scfifo.tdf                       ; yes             ; Megafunction                 ; g:/softdata/quartus ii 13.0/quartus/libraries/megafunctions/scfifo.tdf     ;         ;
+; a_regfifo.inc                    ; yes             ; Megafunction                 ; g:/softdata/quartus ii 13.0/quartus/libraries/megafunctions/a_regfifo.inc  ;         ;
+; a_dpfifo.inc                     ; yes             ; Megafunction                 ; g:/softdata/quartus ii 13.0/quartus/libraries/megafunctions/a_dpfifo.inc   ;         ;
+; a_i2fifo.inc                     ; yes             ; Megafunction                 ; g:/softdata/quartus ii 13.0/quartus/libraries/megafunctions/a_i2fifo.inc   ;         ;
+; a_fffifo.inc                     ; yes             ; Megafunction                 ; g:/softdata/quartus ii 13.0/quartus/libraries/megafunctions/a_fffifo.inc   ;         ;
+; a_f2fifo.inc                     ; yes             ; Megafunction                 ; g:/softdata/quartus ii 13.0/quartus/libraries/megafunctions/a_f2fifo.inc   ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; g:/softdata/quartus ii 13.0/quartus/libraries/megafunctions/aglobal130.inc ;         ;
+; db/scfifo_b031.tdf               ; yes             ; Auto-Generated Megafunction  ; G:/verilog/work/20240925_wr_ctrl/db/scfifo_b031.tdf                        ;         ;
+; db/a_dpfifo_i631.tdf             ; yes             ; Auto-Generated Megafunction  ; G:/verilog/work/20240925_wr_ctrl/db/a_dpfifo_i631.tdf                      ;         ;
+; db/altsyncram_3e81.tdf           ; yes             ; Auto-Generated Megafunction  ; G:/verilog/work/20240925_wr_ctrl/db/altsyncram_3e81.tdf                    ;         ;
+; db/cmpr_hs8.tdf                  ; yes             ; Auto-Generated Megafunction  ; G:/verilog/work/20240925_wr_ctrl/db/cmpr_hs8.tdf                           ;         ;
+; db/cntr_unb.tdf                  ; yes             ; Auto-Generated Megafunction  ; G:/verilog/work/20240925_wr_ctrl/db/cntr_unb.tdf                           ;         ;
+; db/cntr_bo7.tdf                  ; yes             ; Auto-Generated Megafunction  ; G:/verilog/work/20240925_wr_ctrl/db/cntr_bo7.tdf                           ;         ;
+; db/cntr_vnb.tdf                  ; yes             ; Auto-Generated Megafunction  ; G:/verilog/work/20240925_wr_ctrl/db/cntr_vnb.tdf                           ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 953       ;
+;                                             ;           ;
+; Total combinational functions               ; 800       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 352       ;
+;     -- 3 input functions                    ; 138       ;
+;     -- <=2 input functions                  ; 310       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 566       ;
+;     -- arithmetic mode                      ; 234       ;
+;                                             ;           ;
+; Total registers                             ; 509       ;
+;     -- Dedicated logic registers            ; 509       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 29        ;
+; Total memory bits                           ; 256       ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 525       ;
+; Total fan-out                               ; 4713      ;
+; Average fan-out                             ; 3.41      ;
++---------------------------------------------+-----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                        ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                  ; Library Name ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+; |wr_ctrl                                 ; 800 (13)          ; 509 (10)     ; 256         ; 0            ; 0       ; 0         ; 29   ; 0            ; |wr_ctrl                                                                                                             ; work         ;
+;    |ADC_loop:U_ADC_loop|                 ; 313 (36)          ; 111 (23)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|ADC_loop:U_ADC_loop                                                                                         ; work         ;
+;       |ADC_set:U_ADC_set|                ; 277 (188)         ; 88 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|ADC_loop:U_ADC_loop|ADC_set:U_ADC_set                                                                       ; work         ;
+;          |ADC_driver:U_ADC_driver|       ; 89 (89)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|ADC_driver:U_ADC_driver                                               ; work         ;
+;    |DAC_pulse:U_DAC_bias|                ; 117 (84)          ; 82 (56)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|DAC_pulse:U_DAC_bias                                                                                        ; work         ;
+;       |DAC_driver:U_DAC_driver|          ; 33 (33)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|DAC_pulse:U_DAC_bias|DAC_driver:U_DAC_driver                                                                ; work         ;
+;    |DAC_pulse:U_DAC_pulse|               ; 155 (122)         ; 82 (56)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|DAC_pulse:U_DAC_pulse                                                                                       ; work         ;
+;       |DAC_driver:U_DAC_driver|          ; 33 (33)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|DAC_pulse:U_DAC_pulse|DAC_driver:U_DAC_driver                                                               ; work         ;
+;    |Fifo:U_Fifo|                         ; 28 (0)            ; 21 (0)       ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|Fifo:U_Fifo                                                                                                 ; work         ;
+;       |scfifo:scfifo_component|          ; 28 (0)            ; 21 (0)       ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|Fifo:U_Fifo|scfifo:scfifo_component                                                                         ; work         ;
+;          |scfifo_b031:auto_generated|    ; 28 (0)            ; 21 (0)       ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated                                              ; work         ;
+;             |a_dpfifo_i631:dpfifo|       ; 28 (17)           ; 21 (10)      ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated|a_dpfifo_i631:dpfifo                         ; work         ;
+;                |altsyncram_3e81:FIFOram| ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated|a_dpfifo_i631:dpfifo|altsyncram_3e81:FIFOram ; work         ;
+;                |cntr_bo7:usedw_counter|  ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated|a_dpfifo_i631:dpfifo|cntr_bo7:usedw_counter  ; work         ;
+;                |cntr_unb:rd_ptr_msb|     ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated|a_dpfifo_i631:dpfifo|cntr_unb:rd_ptr_msb     ; work         ;
+;                |cntr_vnb:wr_ptr|         ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated|a_dpfifo_i631:dpfifo|cntr_vnb:wr_ptr         ; work         ;
+;    |Sig_dly:U_Sig_dly|                   ; 35 (35)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|Sig_dly:U_Sig_dly                                                                                           ; work         ;
+;    |UART_recv:U_UART_recv|               ; 85 (38)           ; 133 (104)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|UART_recv:U_UART_recv                                                                                       ; work         ;
+;       |Uart_rx:U_Uart_rx|                ; 47 (47)           ; 29 (29)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|UART_recv:U_UART_recv|Uart_rx:U_Uart_rx                                                                     ; work         ;
+;    |UART_send:U_UART_send|               ; 54 (15)           ; 47 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|UART_send:U_UART_send                                                                                       ; work         ;
+;       |Uart_tx:U_Uart_tx|                ; 39 (39)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wr_ctrl|UART_send:U_UART_send|Uart_tx:U_Uart_tx                                                                     ; work         ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                           ;
++------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                                   ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated|a_dpfifo_i631:dpfifo|altsyncram_3e81:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 16           ; 16           ; 16           ; 16           ; 256  ; None ;
++------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                  ;
++--------+--------------+---------+--------------+--------------+----------------------+-------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance      ; IP Include File                                 ;
++--------+--------------+---------+--------------+--------------+----------------------+-------------------------------------------------+
+; Altera ; FIFO         ; 13.0    ; N/A          ; N/A          ; |wr_ctrl|Fifo:U_Fifo ; G:/verilog/work/20240925_wr_ctrl/ip_core/Fifo.v ;
++--------+--------------+---------+--------------+--------------+----------------------+-------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------+
+; State Machine - |wr_ctrl|ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|state_c   ;
++--------------+--------------+--------------+--------------+--------------+
+; Name         ; state_c.WAIT ; state_c.READ ; state_c.DELY ; state_c.IDLE ;
++--------------+--------------+--------------+--------------+--------------+
+; state_c.IDLE ; 0            ; 0            ; 0            ; 0            ;
+; state_c.DELY ; 0            ; 0            ; 1            ; 1            ;
+; state_c.READ ; 0            ; 1            ; 0            ; 1            ;
+; state_c.WAIT ; 1            ; 0            ; 0            ; 1            ;
++--------------+--------------+--------------+--------------+--------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------+
+; State Machine - |wr_ctrl|ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|ADC_driver:U_ADC_driver|state_c ;
++--------------+--------------+--------------+---------------------------------------------------+
+; Name         ; state_c.IDLE ; state_c.WAIT ; state_c.CONF                                      ;
++--------------+--------------+--------------+---------------------------------------------------+
+; state_c.IDLE ; 0            ; 0            ; 0                                                 ;
+; state_c.CONF ; 1            ; 0            ; 1                                                 ;
+; state_c.WAIT ; 1            ; 1            ; 0                                                 ;
++--------------+--------------+--------------+---------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------+
+; State Machine - |wr_ctrl|DAC_pulse:U_DAC_pulse|state_c                   ;
++--------------+--------------+--------------+--------------+--------------+
+; Name         ; state_c.FALL ; state_c.WAIT ; state_c.RISE ; state_c.IDLE ;
++--------------+--------------+--------------+--------------+--------------+
+; state_c.IDLE ; 0            ; 0            ; 0            ; 0            ;
+; state_c.RISE ; 0            ; 0            ; 1            ; 1            ;
+; state_c.WAIT ; 0            ; 1            ; 0            ; 1            ;
+; state_c.FALL ; 1            ; 0            ; 0            ; 1            ;
++--------------+--------------+--------------+--------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------+
+; State Machine - |wr_ctrl|DAC_pulse:U_DAC_bias|state_c                    ;
++--------------+--------------+--------------+--------------+--------------+
+; Name         ; state_c.FALL ; state_c.WAIT ; state_c.RISE ; state_c.IDLE ;
++--------------+--------------+--------------+--------------+--------------+
+; state_c.IDLE ; 0            ; 0            ; 0            ; 0            ;
+; state_c.RISE ; 0            ; 0            ; 1            ; 1            ;
+; state_c.WAIT ; 0            ; 1            ; 0            ; 1            ;
+; state_c.FALL ; 1            ; 0            ; 0            ; 1            ;
++--------------+--------------+--------------+--------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                   ;
++-----------------------------------------------------------------------------+------------------------------------------------------------------------+
+; Register name                                                               ; Reason for Removal                                                     ;
++-----------------------------------------------------------------------------+------------------------------------------------------------------------+
+; ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|ADC_driver:U_ADC_driver|din_buf[0..3] ; Stuck at GND due to stuck port data_in                                 ;
+; DAC_pulse:U_DAC_pulse|da_data[13]                                           ; Merged with DAC_pulse:U_DAC_pulse|da_data[14]                          ;
+; DAC_pulse:U_DAC_pulse|DAC_driver:U_DAC_driver|data_buf[13]                  ; Merged with DAC_pulse:U_DAC_pulse|DAC_driver:U_DAC_driver|data_buf[14] ;
+; DAC_pulse:U_DAC_bias|da_data[13]                                            ; Merged with DAC_pulse:U_DAC_bias|da_data[14]                           ;
+; DAC_pulse:U_DAC_bias|DAC_driver:U_DAC_driver|data_buf[13]                   ; Merged with DAC_pulse:U_DAC_bias|DAC_driver:U_DAC_driver|data_buf[14]  ;
+; DAC_pulse:U_DAC_pulse|da_data[14]                                           ; Stuck at GND due to stuck port data_in                                 ;
+; DAC_pulse:U_DAC_pulse|DAC_driver:U_DAC_driver|data_buf[14]                  ; Stuck at GND due to stuck port data_in                                 ;
+; DAC_pulse:U_DAC_bias|da_data[14]                                            ; Stuck at GND due to stuck port data_in                                 ;
+; DAC_pulse:U_DAC_bias|DAC_driver:U_DAC_driver|data_buf[14]                   ; Stuck at GND due to stuck port data_in                                 ;
+; DAC_pulse:U_DAC_pulse|da_data[12]                                           ; Stuck at VCC due to stuck port data_in                                 ;
+; DAC_pulse:U_DAC_bias|da_data[12]                                            ; Stuck at VCC due to stuck port data_in                                 ;
+; ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|state_c~4                             ; Lost fanout                                                            ;
+; ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|state_c~5                             ; Lost fanout                                                            ;
+; DAC_pulse:U_DAC_pulse|state_c~4                                             ; Lost fanout                                                            ;
+; DAC_pulse:U_DAC_pulse|state_c~5                                             ; Lost fanout                                                            ;
+; DAC_pulse:U_DAC_bias|state_c~4                                              ; Lost fanout                                                            ;
+; DAC_pulse:U_DAC_bias|state_c~5                                              ; Lost fanout                                                            ;
+; Total Number of Removed Registers = 20                                      ;                                                                        ;
++-----------------------------------------------------------------------------+------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                ;
++-----------------------------------+---------------------------+------------------------------------------------------------+
+; Register name                     ; Reason for Removal        ; Registers Removed due to This Register                     ;
++-----------------------------------+---------------------------+------------------------------------------------------------+
+; DAC_pulse:U_DAC_pulse|da_data[14] ; Stuck at GND              ; DAC_pulse:U_DAC_pulse|DAC_driver:U_DAC_driver|data_buf[14] ;
+;                                   ; due to stuck port data_in ;                                                            ;
+; DAC_pulse:U_DAC_bias|da_data[14]  ; Stuck at GND              ; DAC_pulse:U_DAC_bias|DAC_driver:U_DAC_driver|data_buf[14]  ;
+;                                   ; due to stuck port data_in ;                                                            ;
++-----------------------------------+---------------------------+------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 509   ;
+; Number of registers using Synchronous Clear  ; 101   ;
+; Number of registers using Synchronous Load   ; 19    ;
+; Number of registers using Asynchronous Clear ; 497   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 416   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                 ;
++--------------------------------------------------------------------+---------+
+; Inverted Register                                                  ; Fan out ;
++--------------------------------------------------------------------+---------+
+; UART_send:U_UART_send|Uart_tx:U_Uart_tx|tx                         ; 1       ;
+; DAC_pulse:U_DAC_pulse|DAC_driver:U_DAC_driver|cs_n                 ; 5       ;
+; DAC_pulse:U_DAC_bias|DAC_driver:U_DAC_driver|cs_n                  ; 3       ;
+; DAC_pulse:U_DAC_pulse|DAC_driver:U_DAC_driver|ld_n                 ; 2       ;
+; DAC_pulse:U_DAC_bias|DAC_driver:U_DAC_driver|ld_n                  ; 2       ;
+; ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|ADC_driver:U_ADC_driver|cs_n ; 2       ;
+; idle                                                               ; 16      ;
+; sw[8]~reg0                                                         ; 1       ;
+; UART_send:U_UART_send|Uart_tx:U_Uart_tx|idle                       ; 17      ;
+; DAC_pulse:U_DAC_pulse|DAC_driver:U_DAC_driver|idle                 ; 13      ;
+; DAC_pulse:U_DAC_bias|DAC_driver:U_DAC_driver|idle                  ; 13      ;
+; UART_send:U_UART_send|idle                                         ; 8       ;
+; Sig_dly:U_Sig_dly|idle                                             ; 8       ;
+; ADC_loop:U_ADC_loop|idle                                           ; 3       ;
+; UART_recv:U_UART_recv|Uart_rx:U_Uart_rx|idle                       ; 3       ;
+; ADC_loop:U_ADC_loop|ad_idle                                        ; 2       ;
+; Total number of inverted registers = 16                            ;         ;
++--------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |wr_ctrl|DAC_pulse:U_DAC_pulse|da_data[2]                   ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |wr_ctrl|DAC_pulse:U_DAC_bias|da_data[0]                    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |wr_ctrl|ADC_loop:U_ADC_loop|ad_dly[9]                      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |wr_ctrl|ADC_loop:U_ADC_loop|cnt_chan[2]                    ;
+; 4:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |wr_ctrl|UART_recv:U_UART_recv|Uart_rx:U_Uart_rx|cnt_div[7] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |wr_ctrl|UART_recv:U_UART_recv|Uart_rx:U_Uart_rx|cnt_idx[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |wr_ctrl|ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|Mux6         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |wr_ctrl|ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|Mux5         ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |wr_ctrl|ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|Mux4         ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |wr_ctrl|ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|Mux0         ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |wr_ctrl|ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|Mux10        ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |wr_ctrl|ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|Mux5         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated|a_dpfifo_i631:dpfifo|altsyncram_3e81:FIFOram ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                   ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                    ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DAC_pulse:U_DAC_bias ;
++----------------+--------+-----------------------------------------+
+; Parameter Name ; Value  ; Type                                    ;
++----------------+--------+-----------------------------------------+
+; CNT_1US        ; 110010 ; Unsigned Binary                         ;
+; IDLE           ; 00     ; Unsigned Binary                         ;
+; RISE           ; 01     ; Unsigned Binary                         ;
+; WAIT           ; 10     ; Unsigned Binary                         ;
+; FALL           ; 11     ; Unsigned Binary                         ;
++----------------+--------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Sig_dly:U_Sig_dly ;
++----------------+--------+--------------------------------------+
+; Parameter Name ; Value  ; Type                                 ;
++----------------+--------+--------------------------------------+
+; CNT_1US        ; 110010 ; Unsigned Binary                      ;
++----------------+--------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DAC_pulse:U_DAC_pulse ;
++----------------+--------+------------------------------------------+
+; Parameter Name ; Value  ; Type                                     ;
++----------------+--------+------------------------------------------+
+; CNT_1US        ; 110010 ; Unsigned Binary                          ;
+; IDLE           ; 00     ; Unsigned Binary                          ;
+; RISE           ; 01     ; Unsigned Binary                          ;
+; WAIT           ; 10     ; Unsigned Binary                          ;
+; FALL           ; 11     ; Unsigned Binary                          ;
++----------------+--------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADC_loop:U_ADC_loop|ADC_set:U_ADC_set ;
++----------------+--------+----------------------------------------------------------+
+; Parameter Name ; Value  ; Type                                                     ;
++----------------+--------+----------------------------------------------------------+
+; CNT_1US        ; 110010 ; Unsigned Binary                                          ;
+; IDLE           ; 00     ; Unsigned Binary                                          ;
+; DELY           ; 01     ; Unsigned Binary                                          ;
+; READ           ; 10     ; Unsigned Binary                                          ;
+; WAIT           ; 11     ; Unsigned Binary                                          ;
++----------------+--------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|ADC_driver:U_ADC_driver ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; IDLE           ; 00    ; Unsigned Binary                                                                   ;
+; CONF           ; 01    ; Unsigned Binary                                                                   ;
+; WAIT           ; 10    ; Unsigned Binary                                                                   ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Fifo:U_Fifo|scfifo:scfifo_component ;
++-------------------------+--------------+-----------------------------------------+
+; Parameter Name          ; Value        ; Type                                    ;
++-------------------------+--------------+-----------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON           ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS    ; OFF          ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS     ; ON           ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS  ; OFF          ; IGNORE_CASCADE                          ;
+; lpm_width               ; 16           ; Signed Integer                          ;
+; LPM_NUMWORDS            ; 16           ; Signed Integer                          ;
+; LPM_WIDTHU              ; 4            ; Signed Integer                          ;
+; LPM_SHOWAHEAD           ; ON           ; Untyped                                 ;
+; UNDERFLOW_CHECKING      ; ON           ; Untyped                                 ;
+; OVERFLOW_CHECKING       ; ON           ; Untyped                                 ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF          ; Untyped                                 ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF          ; Untyped                                 ;
+; ALMOST_FULL_VALUE       ; 0            ; Untyped                                 ;
+; ALMOST_EMPTY_VALUE      ; 0            ; Untyped                                 ;
+; USE_EAB                 ; ON           ; Untyped                                 ;
+; MAXIMIZE_SPEED          ; 5            ; Untyped                                 ;
+; DEVICE_FAMILY           ; Cyclone IV E ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED      ; 5            ; Untyped                                 ;
+; CBXI_PARAMETER          ; scfifo_b031  ; Untyped                                 ;
++-------------------------+--------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; scfifo Parameter Settings by Entity Instance                     ;
++----------------------------+-------------------------------------+
+; Name                       ; Value                               ;
++----------------------------+-------------------------------------+
+; Number of entity instances ; 1                                   ;
+; Entity Instance            ; Fifo:U_Fifo|scfifo:scfifo_component ;
+;     -- FIFO Type           ; Single Clock                        ;
+;     -- lpm_width           ; 16                                  ;
+;     -- LPM_NUMWORDS        ; 16                                  ;
+;     -- LPM_SHOWAHEAD       ; ON                                  ;
+;     -- USE_EAB             ; ON                                  ;
++----------------------------+-------------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|ADC_driver:U_ADC_driver" ;
++-----------+-------+----------+------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                    ;
++-----------+-------+----------+------------------------------------------------------------+
+; din[3..0] ; Input ; Info     ; Stuck at GND                                               ;
++-----------+-------+----------+------------------------------------------------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "Sig_dly:U_Sig_dly" ;
++------------+-------+----------+---------------+
+; Port       ; Type  ; Severity ; Details       ;
++------------+-------+----------+---------------+
+; dly[15..1] ; Input ; Info     ; Stuck at GND  ;
+; dly[0]     ; Input ; Info     ; Stuck at VCC  ;
++------------+-------+----------+---------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "DAC_pulse:U_DAC_bias"  ;
++------+--------+----------+------------------------+
+; Port ; Type   ; Severity ; Details                ;
++------+--------+----------+------------------------+
+; done ; Output ; Info     ; Explicitly unconnected ;
++------+--------+----------+------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UART_recv:U_UART_recv"                                                                        ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; data[111..109] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data[95..89]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data[47..45]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Tue Jan 07 09:20:36 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off wr_ctrl -c wr_ctrl
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file sig_dly.v
+    Info (12023): Found entity 1: Sig_dly
+Info (12021): Found 1 design units, including 1 entities, in source file dac_pulse.v
+    Info (12023): Found entity 1: DAC_pulse
+Info (12021): Found 1 design units, including 1 entities, in source file adc_loop.v
+    Info (12023): Found entity 1: ADC_loop
+Info (12021): Found 1 design units, including 1 entities, in source file wr_ctrl.v
+    Info (12023): Found entity 1: wr_ctrl
+Info (12021): Found 1 design units, including 1 entities, in source file uart_tx.v
+    Info (12023): Found entity 1: Uart_tx
+Info (12021): Found 1 design units, including 1 entities, in source file uart_send.v
+    Info (12023): Found entity 1: UART_send
+Info (12021): Found 1 design units, including 1 entities, in source file uart_rx.v
+    Info (12023): Found entity 1: Uart_rx
+Info (12021): Found 1 design units, including 1 entities, in source file uart_recv.v
+    Info (12023): Found entity 1: UART_recv
+Info (12021): Found 0 design units, including 0 entities, in source file uart_param.v
+Info (12021): Found 1 design units, including 1 entities, in source file dac_driver.v
+    Info (12023): Found entity 1: DAC_driver
+Info (12021): Found 1 design units, including 1 entities, in source file adc_set.v
+    Info (12023): Found entity 1: ADC_set
+Info (12021): Found 1 design units, including 1 entities, in source file adc_driver.v
+    Info (12023): Found entity 1: ADC_driver
+Info (12021): Found 1 design units, including 1 entities, in source file ip_core/fifo.v
+    Info (12023): Found entity 1: Fifo
+Info (12127): Elaborating entity "wr_ctrl" for the top level hierarchy
+Info (12128): Elaborating entity "UART_recv" for hierarchy "UART_recv:U_UART_recv"
+Info (12128): Elaborating entity "Uart_rx" for hierarchy "UART_recv:U_UART_recv|Uart_rx:U_Uart_rx"
+Info (12128): Elaborating entity "DAC_pulse" for hierarchy "DAC_pulse:U_DAC_bias"
+Info (12128): Elaborating entity "DAC_driver" for hierarchy "DAC_pulse:U_DAC_bias|DAC_driver:U_DAC_driver"
+Info (12128): Elaborating entity "Sig_dly" for hierarchy "Sig_dly:U_Sig_dly"
+Info (12128): Elaborating entity "ADC_loop" for hierarchy "ADC_loop:U_ADC_loop"
+Info (12128): Elaborating entity "ADC_set" for hierarchy "ADC_loop:U_ADC_loop|ADC_set:U_ADC_set"
+Info (12128): Elaborating entity "ADC_driver" for hierarchy "ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|ADC_driver:U_ADC_driver"
+Info (12128): Elaborating entity "Fifo" for hierarchy "Fifo:U_Fifo"
+Info (12128): Elaborating entity "scfifo" for hierarchy "Fifo:U_Fifo|scfifo:scfifo_component"
+Info (12130): Elaborated megafunction instantiation "Fifo:U_Fifo|scfifo:scfifo_component"
+Info (12133): Instantiated megafunction "Fifo:U_Fifo|scfifo:scfifo_component" with the following parameter:
+    Info (12134): Parameter "add_ram_output_register" = "OFF"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_numwords" = "16"
+    Info (12134): Parameter "lpm_showahead" = "ON"
+    Info (12134): Parameter "lpm_type" = "scfifo"
+    Info (12134): Parameter "lpm_width" = "16"
+    Info (12134): Parameter "lpm_widthu" = "4"
+    Info (12134): Parameter "overflow_checking" = "ON"
+    Info (12134): Parameter "underflow_checking" = "ON"
+    Info (12134): Parameter "use_eab" = "ON"
+Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_b031.tdf
+    Info (12023): Found entity 1: scfifo_b031
+Info (12128): Elaborating entity "scfifo_b031" for hierarchy "Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_i631.tdf
+    Info (12023): Found entity 1: a_dpfifo_i631
+Info (12128): Elaborating entity "a_dpfifo_i631" for hierarchy "Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated|a_dpfifo_i631:dpfifo"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_3e81.tdf
+    Info (12023): Found entity 1: altsyncram_3e81
+Info (12128): Elaborating entity "altsyncram_3e81" for hierarchy "Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated|a_dpfifo_i631:dpfifo|altsyncram_3e81:FIFOram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_hs8.tdf
+    Info (12023): Found entity 1: cmpr_hs8
+Info (12128): Elaborating entity "cmpr_hs8" for hierarchy "Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated|a_dpfifo_i631:dpfifo|cmpr_hs8:almost_full_comparer"
+Info (12128): Elaborating entity "cmpr_hs8" for hierarchy "Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated|a_dpfifo_i631:dpfifo|cmpr_hs8:three_comparison"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_unb.tdf
+    Info (12023): Found entity 1: cntr_unb
+Info (12128): Elaborating entity "cntr_unb" for hierarchy "Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated|a_dpfifo_i631:dpfifo|cntr_unb:rd_ptr_msb"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_bo7.tdf
+    Info (12023): Found entity 1: cntr_bo7
+Info (12128): Elaborating entity "cntr_bo7" for hierarchy "Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated|a_dpfifo_i631:dpfifo|cntr_bo7:usedw_counter"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_vnb.tdf
+    Info (12023): Found entity 1: cntr_vnb
+Info (12128): Elaborating entity "cntr_vnb" for hierarchy "Fifo:U_Fifo|scfifo:scfifo_component|scfifo_b031:auto_generated|a_dpfifo_i631:dpfifo|cntr_vnb:wr_ptr"
+Info (12128): Elaborating entity "UART_send" for hierarchy "UART_send:U_UART_send"
+Info (12128): Elaborating entity "Uart_tx" for hierarchy "UART_send:U_UART_send|Uart_tx:U_Uart_tx"
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1008 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 24 output pins
+    Info (21061): Implemented 963 logic cells
+    Info (21064): Implemented 16 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4653 megabytes
+    Info: Processing ended: Tue Jan 07 09:20:47 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:06
+
+

@@ -1,0 +1,27 @@
+
+State Machine - |wr_ctrl|ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|state_c
+Name state_c.WAIT state_c.READ state_c.DELY state_c.IDLE 
+state_c.IDLE 0 0 0 0 
+state_c.DELY 0 0 1 1 
+state_c.READ 0 1 0 1 
+state_c.WAIT 1 0 0 1 
+
+State Machine - |wr_ctrl|ADC_loop:U_ADC_loop|ADC_set:U_ADC_set|ADC_driver:U_ADC_driver|state_c
+Name state_c.IDLE state_c.WAIT state_c.CONF 
+state_c.IDLE 0 0 0 
+state_c.CONF 1 0 1 
+state_c.WAIT 1 1 0 
+
+State Machine - |wr_ctrl|DAC_pulse:U_DAC_pulse|state_c
+Name state_c.FALL state_c.WAIT state_c.RISE state_c.IDLE 
+state_c.IDLE 0 0 0 0 
+state_c.RISE 0 0 1 1 
+state_c.WAIT 0 1 0 1 
+state_c.FALL 1 0 0 1 
+
+State Machine - |wr_ctrl|DAC_pulse:U_DAC_bias|state_c
+Name state_c.FALL state_c.WAIT state_c.RISE state_c.IDLE 
+state_c.IDLE 0 0 0 0 
+state_c.RISE 0 0 1 1 
+state_c.WAIT 0 1 0 1 
+state_c.FALL 1 0 0 1 

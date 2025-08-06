@@ -1,0 +1,302 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dG:/verilog/work/20240925_wr_ctrl/simulation/modelsim
+T_opt
+!s110 1736134730
+VG[ePm1cT=1aP[CzcL9M[j3
+04 10 4 work wr_ctrl_tb fast 0
+=3-7c8ae10803b6-677b5049-344-3d28
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work +acc
+n@_opt
+OL;O;10.4;61
+vADC_driver
+!s110 1736134720
+!i10b 1
+!s100 abz1ziEUb?IY_0AnBK3;<2
+Ik5WId_SBV<mjkXGMK]1S63
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1727341431
+8G:/verilog/work/20240925_wr_ctrl/ADC_driver.v
+FG:/verilog/work/20240925_wr_ctrl/ADC_driver.v
+L0 13
+Z2 OL;L;10.4;61
+r1
+!s85 0
+31
+!s108 1736134720.779000
+!s107 G:/verilog/work/20240925_wr_ctrl/ADC_driver.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/verilog/work/20240925_wr_ctrl|-L|mtiAvm|-L|mtiRnm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|-L|infact|G:/verilog/work/20240925_wr_ctrl/ADC_driver.v|
+!i113 0
+Z3 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z4 !s92 -vlog01compat -work work +incdir+G:/verilog/work/20240925_wr_ctrl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+n@a@d@c_driver
+vADC_loop
+Z5 !s110 1736134721
+!i10b 1
+!s100 ^gL`PD`hQEP994?i`FPZ_1
+IW4nd=a1=:ShfGoX`J>n<[2
+R1
+R0
+w1736134215
+8G:/verilog/work/20240925_wr_ctrl/ADC_loop.v
+FG:/verilog/work/20240925_wr_ctrl/ADC_loop.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1736134721.146000
+!s107 G:/verilog/work/20240925_wr_ctrl/ADC_loop.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/verilog/work/20240925_wr_ctrl|-L|mtiAvm|-L|mtiRnm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|-L|infact|G:/verilog/work/20240925_wr_ctrl/ADC_loop.v|
+!i113 0
+R3
+R4
+n@a@d@c_loop
+vADC_set
+R5
+!i10b 1
+!s100 VQ0IHYK;fXF7]mkK:4bW>1
+IY6FYXeKE5_mX>TH54eWm73
+R1
+R0
+w1736134712
+8G:/verilog/work/20240925_wr_ctrl/ADC_set.v
+FG:/verilog/work/20240925_wr_ctrl/ADC_set.v
+L0 21
+R2
+r1
+!s85 0
+31
+!s108 1736134721.452000
+!s107 G:/verilog/work/20240925_wr_ctrl/ADC_set.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/verilog/work/20240925_wr_ctrl|-L|mtiAvm|-L|mtiRnm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|-L|infact|G:/verilog/work/20240925_wr_ctrl/ADC_set.v|
+!i113 0
+R3
+R4
+n@a@d@c_set
+vDAC_driver
+R5
+!i10b 1
+!s100 EI[[@eE]ADHFU[SAUi3Y:3
+IHBk1gF0<[m]ceL2BD[kUb3
+R1
+R0
+w1727332871
+8G:/verilog/work/20240925_wr_ctrl/DAC_driver.v
+FG:/verilog/work/20240925_wr_ctrl/DAC_driver.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1736134721.759000
+!s107 G:/verilog/work/20240925_wr_ctrl/DAC_driver.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/verilog/work/20240925_wr_ctrl|-L|mtiAvm|-L|mtiRnm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|-L|infact|G:/verilog/work/20240925_wr_ctrl/DAC_driver.v|
+!i113 0
+R3
+R4
+n@d@a@c_driver
+vDAC_pulse
+Z6 !s110 1736134722
+!i10b 1
+!s100 M3ClaS?ZhdDD<z1^a<L@F1
+ISkNbUaGf?NfEcFB:dJDH52
+R1
+R0
+w1729606018
+8G:/verilog/work/20240925_wr_ctrl/DAC_pulse.v
+FG:/verilog/work/20240925_wr_ctrl/DAC_pulse.v
+L0 19
+R2
+r1
+!s85 0
+31
+!s108 1736134722.048000
+!s107 G:/verilog/work/20240925_wr_ctrl/DAC_pulse.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/verilog/work/20240925_wr_ctrl|-L|mtiAvm|-L|mtiRnm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|-L|infact|G:/verilog/work/20240925_wr_ctrl/DAC_pulse.v|
+!i113 0
+R3
+R4
+n@d@a@c_pulse
+vFifo
+R6
+!i10b 1
+!s100 JEeleE[FjX=H:bFG:_=Sg0
+I@[^^0zQmC0JaAoeAeg9Ro1
+R1
+R0
+w1727336747
+8G:/verilog/work/20240925_wr_ctrl/ip_core/Fifo.v
+FG:/verilog/work/20240925_wr_ctrl/ip_core/Fifo.v
+L0 39
+R2
+r1
+!s85 0
+31
+!s108 1736134722.336000
+!s107 G:/verilog/work/20240925_wr_ctrl/ip_core/Fifo.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/verilog/work/20240925_wr_ctrl/ip_core|-L|mtiAvm|-L|mtiRnm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|-L|infact|G:/verilog/work/20240925_wr_ctrl/ip_core/Fifo.v|
+!i113 0
+R3
+!s92 -vlog01compat -work work +incdir+G:/verilog/work/20240925_wr_ctrl/ip_core -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+n@fifo
+vSig_dly
+R6
+!i10b 1
+!s100 gQhNL1>F3RPD4PZ_@]FWl2
+I4Xl_;8]_d_mgBlYj?ARQl1
+R1
+R0
+w1731932975
+8G:/verilog/work/20240925_wr_ctrl/Sig_dly.v
+FG:/verilog/work/20240925_wr_ctrl/Sig_dly.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1736134722.633000
+!s107 G:/verilog/work/20240925_wr_ctrl/Sig_dly.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/verilog/work/20240925_wr_ctrl|-L|mtiAvm|-L|mtiRnm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|-L|infact|G:/verilog/work/20240925_wr_ctrl/Sig_dly.v|
+!i113 0
+R3
+R4
+n@sig_dly
+vUART_recv
+R6
+!i10b 1
+!s100 K7hFBXQd_O`<a7Jo?a>FP2
+I?iFQnXYnechBd@gJKV4E11
+R1
+R0
+w1725502236
+8G:/verilog/work/20240925_wr_ctrl/UART_recv.v
+FG:/verilog/work/20240925_wr_ctrl/UART_recv.v
+Z7 L0 14
+R2
+r1
+!s85 0
+31
+!s108 1736134722.920000
+!s107 G:/verilog/work/20240925_wr_ctrl/UART_param.v|G:/verilog/work/20240925_wr_ctrl/UART_recv.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/verilog/work/20240925_wr_ctrl|-L|mtiAvm|-L|mtiRnm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|-L|infact|G:/verilog/work/20240925_wr_ctrl/UART_recv.v|
+!i113 0
+R3
+R4
+n@u@a@r@t_recv
+vUart_rx
+Z8 !s110 1736134723
+!i10b 1
+!s100 JA==EXS9E0^^`TzONU60i1
+I7OA68VRIB2CMdkHeRV^ac0
+R1
+R0
+w1726729769
+8G:/verilog/work/20240925_wr_ctrl/Uart_rx.v
+FG:/verilog/work/20240925_wr_ctrl/Uart_rx.v
+L0 28
+R2
+r1
+!s85 0
+31
+!s108 1736134723.214000
+!s107 G:/verilog/work/20240925_wr_ctrl/UART_param.v|G:/verilog/work/20240925_wr_ctrl/Uart_rx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/verilog/work/20240925_wr_ctrl|-L|mtiAvm|-L|mtiRnm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|-L|infact|G:/verilog/work/20240925_wr_ctrl/Uart_rx.v|
+!i113 0
+R3
+R4
+n@uart_rx
+vUART_send
+R8
+!i10b 1
+!s100 ;9V;d1^W<>BCzSNF1=a?=2
+IK`l=C6=@_OZKBeQdEJ0I:1
+R1
+R0
+w1726735059
+8G:/verilog/work/20240925_wr_ctrl/UART_send.v
+FG:/verilog/work/20240925_wr_ctrl/UART_send.v
+R7
+R2
+r1
+!s85 0
+31
+!s108 1736134723.504000
+!s107 G:/verilog/work/20240925_wr_ctrl/UART_param.v|G:/verilog/work/20240925_wr_ctrl/UART_send.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/verilog/work/20240925_wr_ctrl|-L|mtiAvm|-L|mtiRnm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|-L|infact|G:/verilog/work/20240925_wr_ctrl/UART_send.v|
+!i113 0
+R3
+R4
+n@u@a@r@t_send
+vUart_tx
+R8
+!i10b 1
+!s100 D?6U0R3jV[fGYLCb?nHFo3
+IE7i<kn=[;Ibfeh`I0UC623
+R1
+R0
+w1721617438
+8G:/verilog/work/20240925_wr_ctrl/Uart_tx.v
+FG:/verilog/work/20240925_wr_ctrl/Uart_tx.v
+R7
+R2
+r1
+!s85 0
+31
+!s108 1736134723.806000
+!s107 G:/verilog/work/20240925_wr_ctrl/UART_param.v|G:/verilog/work/20240925_wr_ctrl/Uart_tx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/verilog/work/20240925_wr_ctrl|-L|mtiAvm|-L|mtiRnm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|-L|infact|G:/verilog/work/20240925_wr_ctrl/Uart_tx.v|
+!i113 0
+R3
+R4
+n@uart_tx
+vwr_ctrl
+Z9 !s110 1736134724
+!i10b 1
+!s100 A0YINfom3QUl>l<7[cQa:0
+Ii?:meUgfHBLhBaKC31S7C3
+R1
+R0
+w1736134197
+8G:/verilog/work/20240925_wr_ctrl/wr_ctrl.v
+FG:/verilog/work/20240925_wr_ctrl/wr_ctrl.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1736134724.120000
+!s107 G:/verilog/work/20240925_wr_ctrl/wr_ctrl.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/verilog/work/20240925_wr_ctrl|-L|mtiAvm|-L|mtiRnm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|-L|infact|G:/verilog/work/20240925_wr_ctrl/wr_ctrl.v|
+!i113 0
+R3
+R4
+vwr_ctrl_tb
+R9
+!i10b 1
+!s100 ]i>k0H@5hDH<2jcVBzK043
+Ib84>kKb[HCUEODcKNhHFM1
+R1
+R0
+w1736134046
+8G:/verilog/work/20240925_wr_ctrl/wr_ctrl.vt
+FG:/verilog/work/20240925_wr_ctrl/wr_ctrl.vt
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1736134724.416000
+!s107 G:/verilog/work/20240925_wr_ctrl/wr_ctrl.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+G:/verilog/work/20240925_wr_ctrl|-L|mtiAvm|-L|mtiRnm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|-L|infact|G:/verilog/work/20240925_wr_ctrl/wr_ctrl.vt|
+!i113 0
+R3
+R4

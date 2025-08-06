@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Jan 07 09:21:10 2025
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : wr_ctrl
+Top-level Entity Name : wr_ctrl
+Family : Cyclone IV E
+Device : EP4CE30F23C8
+Timing Models : Final
+Total logic elements : 876 / 28,848 ( 3 % )
+    Total combinational functions : 802 / 28,848 ( 3 % )
+    Dedicated logic registers : 493 / 28,848 ( 2 % )
+Total registers : 493
+Total pins : 29 / 329 ( 9 % )
+Total virtual pins : 0
+Total memory bits : 256 / 608,256 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
